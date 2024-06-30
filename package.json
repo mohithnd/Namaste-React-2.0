@@ -2,7 +2,7 @@
   "name": "react-2.0",
   "version": "1.0.0",
   "scripts": {
-    "dev": "npx parcel index.html",
+    "dev": "npx parcel index.html --no-source-maps",
     "build": "npx parcel build index.html --no-source-maps"
   },
   "keywords": [],

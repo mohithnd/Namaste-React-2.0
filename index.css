@@ -1,17 +1,160 @@
+/* Reset default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-  background-color: #f0f0f0;
-  color: #000;
-}
-
-#container {
-  background-color: #fff;
-  color: #000;
-}
-
-.heading {
+  font-family: Arial, sans-serif;
+  background-color: #f8f8f8;
   color: #333;
 }
 
-#root h1 {
-  color: #007bff;
+.app {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Header styles */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+  border-bottom: 2px solid #e0e0e0;
+  margin-bottom: 30px;
+}
+
+.logo-container {
+  width: 80px;
+}
+
+.logo {
+  width: 100%;
+  height: auto;
+  border-radius: 50%;
+}
+
+.nav-items ul {
+  display: flex;
+  list-style-type: none;
+}
+
+.nav-items li {
+  margin-left: 30px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.nav-items li:hover {
+  color: #ff6b6b;
+}
+
+/* Body styles */
+.body {
+  margin-top: 20px;
+}
+
+.search {
+  margin-bottom: 30px;
+  padding: 12px;
+  width: 100%;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  transition: box-shadow 0.3s ease;
+}
+
+.search:focus {
+  outline: none;
+  box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+}
+
+.res-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+/* Restaurant card styles */
+.res-card {
+  background-color: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.res-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.res-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.res-card h3,
+.res-card h4 {
+  padding: 10px 15px;
+}
+
+.res-card h3 {
+  font-size: 20px;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.res-card h4 {
+  font-size: 14px;
+  color: #666;
+  font-weight: normal;
+}
+
+.res-card h4:last-child {
+  color: #ff6b6b;
+  font-weight: bold;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-items {
+    margin-top: 20px;
+  }
+
+  .nav-items ul {
+    flex-wrap: wrap;
+  }
+
+  .nav-items li {
+    margin: 10px 20px 0 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .res-container {
+    grid-template-columns: 1fr;
+  }
+
+  .nav-items {
+    width: 100%;
+  }
+
+  .nav-items ul {
+    justify-content: space-between;
+  }
+
+  .nav-items li {
+    margin: 10px 0;
+  }
 }
