@@ -1,6 +1,7 @@
 import RestaurentCard from "./RestaurentCard";
 import { useState, useEffect } from "react";
 import { CARDS_DATA_URL } from "../utils/constants";
+import Shimmer from "./Shimmer";
 
 const Body = () => {
   const [resCards, setResCards] = useState([]);
@@ -16,18 +17,9 @@ const Body = () => {
     setResCards(data);
   };
 
-  if (resCards.length === 0) {
-    return (
-      <div className="loading">
-        <div className="loading-dot"></div>
-        <div className="loading-dot"></div>
-        <div className="loading-dot"></div>
-        <div className="loading-dot"></div>
-      </div>
-    );
-  }
-
-  return (
+  return resCards.length === 0 ? (
+    <Shimmer />
+  ) : (
     <div className="body">
       <div className="filter">
         <button
