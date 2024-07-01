@@ -12,7 +12,6 @@
   --transition: all 0.3s ease;
 }
 
-/* Reset and base styles */
 * {
   margin: 0;
   padding: 0;
@@ -137,6 +136,52 @@ body {
 .res-card h4:last-child {
   color: var(--color-primary);
   font-weight: bold;
+}
+
+/* Loading animation */
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  margin-top: 2rem;
+}
+
+.loading-dot {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  margin: 0 10px;
+  animation: bounce 0.5s ease-in-out infinite alternate;
+}
+
+.loading-dot:nth-child(1) {
+  background-color: #ff6b6b;
+  animation-delay: 0s;
+}
+
+.loading-dot:nth-child(2) {
+  background-color: #feca57;
+  animation-delay: 0.1s;
+}
+
+.loading-dot:nth-child(3) {
+  background-color: #48dbfb;
+  animation-delay: 0.2s;
+}
+
+.loading-dot:nth-child(4) {
+  background-color: #ff9ff3;
+  animation-delay: 0.3s;
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-20px);
+  }
 }
 
 /* Responsive design */

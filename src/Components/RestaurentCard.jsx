@@ -1,14 +1,16 @@
+import { CLOUDINARY_BASE_URL } from "../utils/constants";
+
 const RestaurentCard = ({
+  cloudinaryPath,
   resName,
   cuisines,
   avgRating,
   costForTwo,
   deliveryTime,
-  imageUrl,
 }) => {
   return (
     <div className="res-card">
-      <img alt="res-logo" src={imageUrl} />
+      <img alt="res-logo" src={CLOUDINARY_BASE_URL + cloudinaryPath} />
       <h3>{resName}</h3>
       <h4>{cuisines}</h4>
       <h4>{avgRating} Stars</h4>

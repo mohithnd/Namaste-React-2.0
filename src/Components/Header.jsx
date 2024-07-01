@@ -1,10 +1,13 @@
-import { LOGO_URL } from "../utils/constants";
+import { CLOUDINARY_LOGO_PATH, CLOUDINARY_BASE_URL } from "../utils/constants";
 
 const Header = () => {
   return (
     <div className="header">
       <div className="logo-container">
-        <img className="logo" src={LOGO_URL} />
+        <img
+          className="logo"
+          src={CLOUDINARY_BASE_URL + CLOUDINARY_LOGO_PATH}
+        />
       </div>
       <div className="nav-items">
         <ul>

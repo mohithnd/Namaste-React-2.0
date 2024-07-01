@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "scripts": {
     "dev": "npx parcel index.html --no-source-maps",
-    "build": "npx parcel build index.html --no-source-maps"
+    "build": "npx parcel build index.html --no-source-maps",
+    "start": "npx serve dist -p 80"
   },
   "keywords": [],
   "author": "",
