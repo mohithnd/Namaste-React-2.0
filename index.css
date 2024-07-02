@@ -57,6 +57,7 @@ body {
 .nav-items ul {
   display: flex;
   list-style-type: none;
+  align-items: center;
 }
 
 .nav-items li {
@@ -68,6 +69,23 @@ body {
 
 .nav-items li:hover {
   color: var(--color-primary);
+}
+
+/* Login/Logout button */
+.nav-items button {
+  margin-left: var(--spacing-lg);
+  padding: var(--spacing-sm) var(--spacing-md);
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: var(--transition);
+  font-weight: bold;
+}
+
+.nav-items button:hover {
+  background-color: var(--color-primary-dark);
 }
 
 /* Body styles */
@@ -178,11 +196,12 @@ body {
 
   .nav-items ul {
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: flex-start;
   }
 
-  .nav-items li {
-    margin: var(--spacing-sm) 0;
+  .nav-items li,
+  .nav-items button {
+    margin: var(--spacing-sm) var(--spacing-sm) var(--spacing-sm) 0;
   }
 
   .res-container {
