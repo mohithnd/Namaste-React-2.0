@@ -77,7 +77,7 @@ const Body = () => {
       </div>
       <div className="res-container">
         {resCards.map((card) => (
-          <RestaurentCard {...card} key={card.cloudinaryPath} />
+          <RestaurentCard {...card} key={card.id} />
         ))}
       </div>
     </div>

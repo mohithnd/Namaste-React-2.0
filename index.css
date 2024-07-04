@@ -1,27 +1,4 @@
-:root {
-  --color-primary: #ff6b6b;
-  --color-primary-dark: #ff5252;
-  --color-secondary: #4ecdc4;
-  --color-text: #333333;
-  --color-text-light: #666666;
-  --color-background: #f8f8f8;
-  --color-white: #ffffff;
-  --color-border: #e0e0e0;
-  --box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  --box-shadow-hover: 0 4px 8px rgba(0, 0, 0, 0.15);
-  --border-radius: 8px;
-  --transition: all 0.3s ease;
-  --spacing-xs: 0.5rem;
-  --spacing-sm: 0.75rem;
-  --spacing-md: 1.25rem;
-  --spacing-lg: 2rem;
-  --font-size-small: 0.875rem;
-  --font-size-medium: 1rem;
-  --font-size-large: 1.25rem;
-  --font-size-xl: 1.5rem;
-  --font-size-xxl: 2rem;
-}
-
+/* Reset and Global Styles */
 * {
   margin: 0;
   padding: 0;
@@ -30,18 +7,46 @@
 
 body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  background-color: var(--color-background);
-  color: var(--color-text);
+  background-color: #f8f8f8; /* Light gray background */
+  color: #333; /* Default text color */
   line-height: 1.6;
 }
 
 .app {
   max-width: 1200px;
   margin: 0 auto;
-  padding: var(--spacing-lg);
+  padding: 2rem; /* Padding for the entire app */
 }
 
-/* Header styles */
+/* Variables */
+:root {
+  --color-primary: #ff6b6b; /* Primary color */
+  --color-primary-dark: #ff5252; /* Darker shade of primary */
+  --color-secondary: #4ecdc4; /* Secondary color */
+  --color-text: #333; /* Main text color */
+  --color-text-light: #666; /* Lighter text color */
+  --color-background: #f8f8f8; /* Background color */
+  --color-white: #fff; /* White color */
+  --color-border: #e0e0e0; /* Border color */
+  --box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Box shadow */
+  --box-shadow-hover: 0 4px 8px rgba(0, 0, 0, 0.15); /* Box shadow on hover */
+  --border-radius: 8px; /* Border radius */
+  --transition: all 0.3s ease; /* Transition duration */
+  --spacing-xs: 0.5rem; /* Extra small spacing */
+  --spacing-sm: 0.75rem; /* Small spacing */
+  --spacing-md: 1.25rem; /* Medium spacing */
+  --spacing-lg: 2rem; /* Large spacing */
+  --font-size-small: 0.875rem; /* Small font size */
+  --font-size-medium: 1rem; /* Medium font size */
+  --font-size-large: 1.25rem; /* Large font size */
+  --font-size-xl: 1.5rem; /* Extra large font size */
+  --font-size-xxl: 2rem; /* Double extra large font size */
+  --color-rating-good: #48c479; /* Good rating color */
+  --color-rating-average: #db7c38; /* Average rating color */
+  --color-rating-poor: #e1b055; /* Poor rating color */
+}
+
+/* Header */
 .header {
   display: flex;
   justify-content: space-between;
@@ -69,12 +74,18 @@ body {
 
 .nav-items li {
   margin-left: var(--spacing-md);
-  cursor: pointer;
-  font-weight: 600;
-  transition: color 0.3s ease;
 }
 
-.nav-items li:hover {
+.nav-items a {
+  color: var(--color-text);
+  text-decoration: none;
+  font-weight: 600;
+  transition: var(--transition);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: var(--border-radius);
+}
+
+.nav-items a:hover {
   color: var(--color-primary);
 }
 
@@ -95,7 +106,7 @@ body {
   transform: translateY(-2px);
 }
 
-/* Body styles */
+/* Body */
 .body {
   margin-top: var(--spacing-lg);
 }
@@ -146,7 +157,6 @@ body {
   gap: var(--spacing-lg);
 }
 
-/* Restaurant card styles */
 .res-card {
   background-color: var(--color-white);
   border-radius: var(--border-radius);
@@ -158,6 +168,12 @@ body {
 .res-card:hover {
   transform: translateY(-5px);
   box-shadow: var(--box-shadow-hover);
+}
+
+.res-card a {
+  text-decoration: none;
+  color: var(--color-text);
+  display: block;
 }
 
 .res-card img {
@@ -179,15 +195,9 @@ body {
 .res-card h4 {
   font-size: var(--font-size-small);
   color: var(--color-text-light);
-  font-weight: normal;
+  font-weight: 400;
 }
 
-.res-card h4:last-child {
-  color: var(--color-primary);
-  font-weight: 600;
-}
-
-/* Shimmer effect styles */
 .shimmer-container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -211,7 +221,7 @@ body {
   }
 }
 
-/* About, Contact, and Error page styles */
+/* About, Contact, Error Pages */
 .about,
 .contact,
 .error {
@@ -240,7 +250,134 @@ body {
   color: var(--color-text);
 }
 
-/* Responsive design */
+/* Restaurant Menu */
+.restaurant-menu {
+  max-width: 800px;
+  margin: var(--spacing-lg) auto;
+  padding: 0 var(--spacing-md);
+}
+
+.restaurant-summary {
+  display: flex;
+  background-color: var(--color-white);
+  padding: var(--spacing-lg);
+  margin-bottom: var(--spacing-lg);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+}
+
+.restaurant-img {
+  width: 200px;
+  height: 200px;
+  border-radius: var(--border-radius);
+  object-fit: cover;
+  margin-right: var(--spacing-lg);
+}
+
+.restaurant-summary-details {
+  flex-grow: 1;
+}
+
+.restaurant-title {
+  font-size: var(--font-size-xl);
+  color: var(--color-text);
+  margin-bottom: var(--spacing-xs);
+}
+
+.restaurant-cuisines {
+  font-size: var(--font-size-medium);
+  color: var(--color-text-light);
+  margin-bottom: var(--spacing-md);
+}
+
+.restaurant-details {
+  display: flex;
+  align-items: center;
+  font-size: var(--font-size-medium);
+}
+
+.restaurant-rating {
+  display: flex;
+  align-items: center;
+  padding: var(--spacing-xs) var(--spacing-sm);
+  background-color: var(--color-rating-good);
+  color: var(--color-white);
+  border-radius: 4px;
+  margin-right: var(--spacing-sm);
+}
+
+.restaurant-rating i {
+  margin-right: var(--spacing-xs);
+}
+
+.restaurant-rating-slash {
+  margin: 0 var(--spacing-sm);
+  color: var(--color-text-light);
+}
+
+.restaurant-menu-content {
+  background-color: var(--color-white);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  padding: var(--spacing-lg);
+}
+
+.menu-title {
+  font-size: var(--font-size-large);
+  color: var(--color-text);
+  margin-bottom: var(--spacing-md);
+}
+
+.menu-items-list {
+  display: grid;
+  gap: var(--spacing-md);
+}
+
+.menu-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: var(--spacing-md);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.menu-item:last-child {
+  border-bottom: none;
+}
+
+.menu-item-details {
+  flex-grow: 1;
+}
+
+.item-title {
+  font-size: var(--font-size-medium);
+  color: var(--color-text);
+  margin-bottom: var(--spacing-xs);
+}
+
+.item-cost {
+  font-size: var(--font-size-small);
+  color: var(--color-text-light);
+}
+
+.add-btn {
+  padding: var(--spacing-xs) var(--spacing-md);
+  background-color: var(--color-white);
+  color: var(--color-primary);
+  border: 1px solid var(--color-primary);
+  border-radius: var(--border-radius);
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.add-btn:hover {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+/* Responsive Design */
+
 @media (max-width: 768px) {
   .header {
     flex-direction: column;
@@ -275,6 +412,38 @@ body {
     margin-bottom: var(--spacing-sm);
     margin-right: 0;
   }
+
+  .restaurant-summary {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .restaurant-img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    margin-right: 0;
+    margin-bottom: var(--spacing-md);
+  }
+
+  .restaurant-details {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .restaurant-rating {
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .menu-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .add-btn {
+    margin-top: var(--spacing-sm);
+  }
 }
 
 @media (max-width: 480px) {
@@ -297,5 +466,14 @@ body {
   .contact h2,
   .error h2 {
     font-size: var(--font-size-large);
+  }
+
+  .restaurant-menu {
+    padding: 0 var(--spacing-sm);
+  }
+
+  .restaurant-summary,
+  .restaurant-menu-content {
+    padding: var(--spacing-md);
   }
 }
