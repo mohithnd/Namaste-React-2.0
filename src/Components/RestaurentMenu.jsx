@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { CARDS_DATA_URL, CLOUDINARY_BASE_URL } from "../utils/constants";
-import Shimmer from "./Shimmer";
+import MenuShimmer from "./MenuShimmer";
 
 const RestaurantMenu = () => {
   const { id } = useParams();
@@ -21,7 +21,7 @@ const RestaurantMenu = () => {
   };
 
   return resInfo === null ? (
-    <Shimmer />
+    <MenuShimmer />
   ) : (
     <div className="restaurant-menu">
       <div className="restaurant-summary">
