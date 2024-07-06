@@ -224,14 +224,16 @@ body {
 /* About, Contact, Error Pages */
 .about,
 .contact,
-.error {
+.error,
+.cart {
   text-align: center;
   padding: var(--spacing-lg);
 }
 
 .about h1,
 .contact h1,
-.error h1 {
+.error h1,
+.cart h1 {
   font-size: var(--font-size-xxl);
   margin-bottom: var(--spacing-md);
   color: var(--color-primary);
@@ -239,7 +241,8 @@ body {
 
 .about h2,
 .contact h2,
-.error h2 {
+.error h2,
+.cart h2 {
   font-size: var(--font-size-xl);
   margin-bottom: var(--spacing-md);
   color: var(--color-text-light);
@@ -458,13 +461,15 @@ body {
 
   .about h1,
   .contact h1,
-  .error h1 {
+  .error h1,
+  .cart h1 {
     font-size: var(--font-size-xl);
   }
 
   .about h2,
   .contact h2,
-  .error h2 {
+  .error h2,
+  .cart h2 {
     font-size: var(--font-size-large);
   }
 
