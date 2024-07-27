@@ -1,10 +1,10 @@
 {
-  "name": "react-2.0",
+  "name": "namaste-react-2",
   "version": "1.0.0",
   "scripts": {
-    "dev": "npx parcel index.html --no-source-maps",
-    "build": "npx parcel build index.html --no-source-maps",
-    "start": "npx serve dist"
+    "dev": "parcel index.html --no-source-maps",
+    "build": "parcel build index.html --no-source-maps",
+    "start": "serve dist"
   },
   "keywords": [],
   "author": "",
@@ -13,7 +13,7 @@
   "dependencies": {
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "react-router-dom": "^6.24.1",
+    "react-router-dom": "^6.25.1",
     "serve": "^14.2.3"
   },
   "devDependencies": {
